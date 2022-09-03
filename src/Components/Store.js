@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import iphoneGif from './Images/miscellaneous/apple-apple-iphone.gif'
 import iphone12 from './Images/miscellaneous/apple-apple-iphone12.gif'
 import Products from './Products'
-import axios from 'axios'
 
-const Store = () => {
-    const [data, setData] = useState([])
-    
-    useEffect(()=>{
-        axios.get('https://e-commerce-bck-end.herokuapp.com/api/products').then((res)=>{
-            const data = res.data
-            setData(data)
-        })
-    },[])
+
+const Store = ({productItems, handleAddClick}) => {
 
   return (
     <div className='store-container'>
@@ -22,16 +14,7 @@ const Store = () => {
         </div>
         <div className="store-section-container">
             <div className='store-section'>
-                {
-                    data.sort((arr)=>arr.length-5).slice(0,25).map((n)=>(
-                        <Products
-                        key = {n.id}
-                        image={n.image}
-                        product = {n.product}
-                        price = {n.price}
-                        />
-                    ))
-                }
+                        <Products productItems={productItems} handleAddClick={handleAddClick}/>                              
             </div>
         </div>
     </div>

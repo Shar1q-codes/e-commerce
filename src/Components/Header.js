@@ -2,11 +2,9 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import bag from "./Images/Web/bag_icon.svg"
 import { useAuth0 } from "@auth0/auth0-react";
-import { useSelector } from 'react-redux';
 
-const Header = () => {
+const Header = ({cartItems}) => {
     const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
-    const state = useSelector((state)=>state.addItem)
   return (
     <div>
         <div className='top-bar'>
@@ -31,7 +29,7 @@ const Header = () => {
                 <NavLink to='/cart' className='link'>
                 <div className='shop-div'>
                     <img src={bag} alt="shop-icon" className='shop-icon'/>
-                    <p>{state.length}</p>
+                    <p>{cartItems.length} Items</p>
                 </div>
                 </NavLink>
                 

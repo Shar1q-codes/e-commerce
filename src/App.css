@@ -42,11 +42,13 @@
 }
 
 .shop-div p{
-  margin: 3px 0 0 0;
+  margin: 7px 5px 0 0;
+  font-size: 16px;
+
 }
 
 .shop-icon{
-  height: 18px;
+  height: 25px;
   margin: 2px 0 0 0 ;
 }
 
@@ -115,7 +117,11 @@
   flex-wrap: wrap;
 }
 
-
+.products-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
 .product-card{
  box-shadow: 0 0 5px black;
@@ -124,6 +130,7 @@
   margin: 30px auto;
   border-radius: 7px;
  position: relative;
+ 
 }
 
 .secondCorousel{
@@ -177,8 +184,9 @@
 }
 
 .footer{
+  
   background-color: rgb(190, 184, 184);
-  height: 500px;
+  height: 400px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -287,6 +295,10 @@
   cursor: pointer;
 }
 
+.add-cart-btn:active{
+  transform: translateY(2px);
+}
+
 @media screen and (max-width: 768px) {
   .navigations ul{
     display: block;
@@ -297,4 +309,92 @@
     margin: 0 auto;
     width: 700px;
   }
+}
+
+.cart-items-empty{
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 28px;
+  background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}
+
+.cart-item-list{
+  width: 80%;
+  background-color: rgb(192, 189, 189);
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cart-img{
+  margin: 10px 0;
+}
+
+.cart-prod{
+  margin: 30px 0;
+  font-size: 28px;
+}
+
+.cart-price{
+  font-size: 20px;
+}
+
+.cart-buttons{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.add-btn{
+  width: 50px;
+  background-color: green;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-btn:active{
+  transform: translateY(2px);
+}
+
+.remove-btn{
+  width: 50px;
+  background-color: rgb(247, 47, 47);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-btn:active{
+  transform: translateY(2px);
+}
+
+.cart-total{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(57, 161, 57);
+  width: 80%;
+  margin: 0 auto;
+  height: 30px;
+}
+
+.clear-btn{
+  background-color: red;
+  color: white;
+  box-shadow: 0 0 5px black;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 6px;
+}
+
+.clear-btn:active{
+  transform: translateY(2px);
 }

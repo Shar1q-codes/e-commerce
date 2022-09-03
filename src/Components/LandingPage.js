@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import firstCorousel from './Images/miscellaneous/2_corousel.png'
 import shipping from './Images/Web/shipping.svg'
 import refund from './Images/Web/refund.svg'
 import support from './Images/Web/support.svg'
 import Products from './Products'
-import axios from 'axios'
 
-const LandingPage = () => {
-    const [data, setData] = useState([])
-    useEffect(()=>{
-        axios.get('https://e-commerce-bck-end.herokuapp.com/api/products').then((res)=>{
-            const data = res.data
-            setData(data)
-        })
-    },[])
+const LandingPage = ({productItems, handleAddClick}) => {
   return (
     <div>
         <div className="firstCorousel">
@@ -27,16 +19,7 @@ const LandingPage = () => {
         
         <div className='productSection-parent'>
         <div className='productSection'>
-            {
-                data.sort((n)=>Math.random(n.id)).slice(0,8).map((n)=>(
-                    <Products
-                    key = {n.id}
-                    image = {n.image}
-                    product = {n.product}
-                    price = {n.price}
-                    />
-                ))
-            }
+            <Products productItems={productItems} handleAddClick={handleAddClick}/>
         </div>
         </div>
         
