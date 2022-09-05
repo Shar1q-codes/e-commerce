@@ -41,11 +41,15 @@ function App() {
     setCartItems([])
   }
 
+  const checkOut = ()=>{
+    alert("Thank You For Purchasing")
+  }
+
   return (
     <div className="App">
           <Router>
             <Header cartItems={cartItems}/>
-            <Navigation productItems = { productItems } cartItems = { cartItems} handleAddClick = {handleAddClick}  handleRemove={handleRemove} handleClear={handleClear}/>
+            <Navigation productItems = { productItems } cartItems = { cartItems} handleAddClick = {handleAddClick}  handleRemove={handleRemove} handleClear={handleClear} checkOut={checkOut}/>
             <Footer/>
           </Router>
     </div>

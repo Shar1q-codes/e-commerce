@@ -4,13 +4,13 @@ import Cart from '../Cart'
 import LandingPage from '../LandingPage'
 import Store from '../Store'
 
-const Navigation = ({productItems, cartItems, handleAddClick, handleRemove, handleClear}) => {
+const Navigation = ({productItems, cartItems, handleAddClick, handleRemove, handleClear, checkOut}) => {
   return (
     <div>
         <Routes>
             <Route path='/' exact element = {<LandingPage productItems={productItems} handleAddClick={handleAddClick}/>}/>
             <Route path='/store' element = {<Store productItems={productItems} handleAddClick={handleAddClick}/>}/>    
-            <Route path='/cart' element= {<Cart cartItems={cartItems} handleAddClick={handleAddClick} handleRemove={handleRemove} handleClear={handleClear}/>}/>
+            <Route path='/cart' element= {<Cart cartItems={cartItems} handleAddClick={handleAddClick} handleRemove={handleRemove} handleClear={handleClear} checkOut={checkOut}/>}/>
         </Routes>
     </div>
   )

@@ -383,6 +383,7 @@
   width: 80%;
   margin: 0 auto;
   height: 30px;
+  color: white;
 }
 
 .clear-btn{
@@ -393,8 +394,24 @@
   padding: 10px;
   margin: 10px;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .clear-btn:active{
+  transform: translateY(2px);
+}
+
+.check-out{
+  background-color: green;
+  color: white;
+  box-shadow: 0 0 5px black;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.check-out:active{
   transform: translateY(2px);
 }

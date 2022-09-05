@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Cart = ({cartItems, handleAddClick, handleRemove, handleClear}) => {
+const Cart = ({cartItems, handleAddClick, handleRemove, handleClear, checkOut}) => {
 
   const totalPrice = cartItems.reduce(
     (price, item)=> price + item.quantity * item.price, 0
@@ -35,7 +35,8 @@ const Cart = ({cartItems, handleAddClick, handleRemove, handleClear}) => {
               Total Price : 
               <div className='total-price'>${totalPrice}</div>
             </div>
-            <div><button onClick={()=>handleClear()} className='clear-btn'>Clear Cart</button></div></div>
+            <div><button onClick={()=>handleClear()} className='clear-btn'>Clear Cart</button>
+            <button className='check-out' onClick={()=>checkOut()}>Check Out</button></div></div>
             ) 
             }
        
