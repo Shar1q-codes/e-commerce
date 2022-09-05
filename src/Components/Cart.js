@@ -36,7 +36,7 @@ const Cart = ({cartItems, handleAddClick, handleRemove, handleClear, checkOut}) 
               <div className='total-price'>${totalPrice}</div>
             </div>
             <div><button onClick={()=>handleClear()} className='clear-btn'>Clear Cart</button>
-            <button className='check-out' onClick={()=>checkOut()}>Check Out</button></div></div>
+            <button className='check-out' onClick={()=>{checkOut(); handleClear()}}>Check Out</button></div></div>
             ) 
             }
        
